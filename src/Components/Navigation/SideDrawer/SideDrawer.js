@@ -4,7 +4,6 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
-
 const sideDrawer = (props) => {
     //not JXS code immediately, but w/ a real function body
     //bc bf I return JXS code, i want to do sth (i.e. conditionally
@@ -20,7 +19,6 @@ const sideDrawer = (props) => {
     // we need to conditionally attch the Open and Close css classes
     // before I return JXS, we create a variable attachedClaases and
     // pass it on to the div below " <div className={attachedClasses.join(' ')}>"
-
 
     return (
         <Fragment>

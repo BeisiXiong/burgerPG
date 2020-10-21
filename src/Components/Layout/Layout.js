@@ -5,21 +5,32 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
 
 class Layout extends Component {
     state = {
-        showSideDrawer: true
+        showSideDrawer: false
     }
     //need to manage some state here
     //showSideDrawer: manages whether it is visible or not
 
     sideDrawerClosedHandler = () => {
         this.setState({showSideDrawer: false});
+        console.log("aaaa");
     }
     //a method that that handles
     // using arrow function so that inside this method "this" keyword always refer to "this" in Layout class
 
+    sideDrawerToggleHandler = () => {
+        this.setState((prevState) =>
+        {
+            console.log("dddd");
+            return { showSideDrawer: !prevState.showSideDrawer };
+
+        });
+        //this way has a flaw: this.setState({showSideDrawer: !this.stae.showSideDrawer});
+    }
+
     render() {
         return (
             <Fragment>
-                <Toolbar/>
+                <Toolbar drawerToggleClicked={() => this.sideDrawerToggleHandler()}/>
                 <SideDrawer open={this.state.showSideDrawer}  closed={this.sideDrawerClosedHandler}/>
                 {/*pass this event handler method to the SideDrawer
                 now we have to use this closed property in the sidedrawer
